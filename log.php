@@ -9,7 +9,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])){
     $password = filter_input(INPUT_POST, 'pass');
 
     $email = htmlentities(mysqli_real_escape_string($conn, $_POST['email']));
-    $password = htmlentities(mysqli_real_escape_string($conn, $_POST['pass']));
+    $password = htmlentities(mysqli_real_escape_string($conn, md5($_POST['pass'])));
 
     
 }

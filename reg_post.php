@@ -9,7 +9,7 @@ if(isset($_POST['button']))
 
     $username = htmlentities(mysqli_real_escape_string($conn , $_POST['user']));
     $email = htmlentities(mysqli_real_escape_string($conn, $_POST['email']));
-    $password = htmlentities(mysqli_real_escape_string($conn, $_POST['pass']));
+    $password = htmlentities(mysqli_real_escape_string($conn, md5($_POST['pass'])));
 
 
 $check_user = "SELECT * FROM `users` WHERE username='$username'";
